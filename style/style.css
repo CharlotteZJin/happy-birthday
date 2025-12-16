@@ -39,6 +39,9 @@ body {
 
 .one {
   font-size: 4.5rem;
+  color: rgb(230, 247, 248); 
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
+  font-weight: bold;
 }
 
 .one > img {
@@ -55,9 +58,12 @@ body {
 
 .three {
   font-size: 3rem;
+  color: rgb(230, 247, 248);  /* 文字颜色改为白色 */
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8);  /* 添加黑色阴影 */
 }
 
 .four .text-box {
+  background-color: rgba(230, 247, 248, 0.7);
   width: 600px;
   margin: 0 auto;
   border: 3px solid #aaa;
@@ -80,9 +86,31 @@ body {
   right: 5px;
   bottom: 5px;
   color: #fff;
-  background-color: rgb(21, 161, 237);
+  background-color: rgb(184, 147, 223);
   padding: 5px 8px;
   border-radius: 3px;
+}
+
+.image-show {
+  width: auto;        
+  height: auto;       
+  margin: 20px auto;  
+}
+.gift-image1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  max-width: 100%;    
+  max-height: 400px;  
+}
+.gift-image2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  max-width: 100%;  
+  max-height: 400px; 
 }
 
 .five p {
@@ -90,6 +118,9 @@ body {
   position: absolute;
   left: 0;
   right: 0;
+  color: rgb(230, 247, 248); 
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
+  font-weight: bold;
 }
 
 .idea-3 strong {
@@ -109,7 +140,7 @@ body {
 }
 
 .idea-6 span {
-  font-size: 15rem;
+  font-size: 10rem;
 }
 
 .six {
@@ -124,9 +155,9 @@ body {
 
 .six .hat {
   position: absolute;
-  width: 80px;
-  top: -35px;
-  left: 41.5%;
+  width: 200px;
+  top: 0px;
+  left:  34%;
   /* transform: scale(0.1); */
 }
 
@@ -147,7 +178,7 @@ body {
   left: 30%;
 }
 
-.eight svg {
+.eight img {
   width: 25px;
   position: absolute;
   top: 0;
@@ -156,75 +187,76 @@ body {
   z-index: -1;
 }
 
-.eight svg:nth-child(1) {
+.eight img:nth-child(1) {
   top: 7vh;
   left: 5vw;
-  fill: #bd6ecf;
 }
 
-.eight svg:nth-child(2) {
+.eight img:nth-child(2) {
   top: 23vh;
   left: 35vw;
-  fill: #7dd175;
 }
 
-.eight svg:nth-child(3) {
+.eight img:nth-child(3) {
   top: 33vh;
   left: 23vw;
-  fill: #349d8b;
 }
 
-.eight svg:nth-child(4) {
+.eight img:nth-child(4) {
   top: 43vh;
   left: 57vw;
-  fill: #347a9d;
 }
 
-.eight svg:nth-child(5) {
+.eight img:nth-child(5) {
   top: 68vh;
   left: 7vw;
-  fill: #c66053;
 }
 
-.eight svg:nth-child(6) {
+.eight img:nth-child(6) {
   top: 42vh;
   left: 77vw;
-  fill: #bfaa40;
 }
 
-.eight svg:nth-child(7) {
+.eight img:nth-child(7) {
   top: 68vh;
   left: 83vw;
-  fill: #e3bae8;
 }
 
-.eight svg:nth-child(8) {
+.eight img:nth-child(8) {
   top: 86vh;
   left: 37vw;
-  fill: #8762cb;
 }
 
-.eight svg:nth-child(9) {
+.eight img:nth-child(9) {
   top: 94vh;
   left: 87vw;
-  fill: #9a90da;
 }
 
 .wish-hbd {
   font-size: 3em;
   margin: 0;
   text-transform: uppercase;
+  color: rgb(90, 71, 158); 
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
 }
 
 .wish h5 {
   font-weight: lighter;
   font-size: 2rem;
   margin: 10px 0 0;
+  color: rgb(230, 247, 248); 
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
 }
 
 .nine p {
   font-size: 2rem;
-  font-weight: lighter;
+  color: rgb(230, 247, 248); 
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
+}
+
+.nine .last-smile {
+  width: 160px;
+  margin-top: 30px;
 }
 
 #replay {
@@ -232,30 +264,7 @@ body {
   cursor: pointer;
 }
 
-/* Media Queries */
-@media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
-  }
-}
 
-@media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
-  }
-}
-
-@media screen and (max-height: 700px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
-}
 
 @media screen and (max-width: 500px) {
   .container {

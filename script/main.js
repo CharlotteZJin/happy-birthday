@@ -98,7 +98,7 @@ const animationTimeline = () => {
       },
       "+=2"
     )
-    .from(".four", 0.7, {
+    .from(".text-box", 0.7, {
       scale: 0.2,
       opacity: 0
     })
@@ -114,9 +114,28 @@ const animationTimeline = () => {
       },
       0.05
     )
+    .from(".gift-image1", 0.5, {
+      scale: 0.2,
+      opacity: 0
+    }, "+=0.8")
+
     .to(".fake-btn", 0.1, {
-      backgroundColor: "rgb(127, 206, 248)"
+      backgroundColor: "rgba(234, 212, 253, 1)"
+    }, "+=0.3")
+    .to(".fake-btn", 0.1, {
+      backgroundColor: "rgba(184, 147, 223, 1)"
+    }, "+=0.3")
+
+    .to(".gift-image1", 0.5, {
+      scale: 0.2,
+      opacity: 0
     })
+    .from(".gift-image2", 0.5, {
+      scale: 0.2,
+      opacity: 0
+    }, "-=0.2")
+    
+
     .to(
       ".four",
       0.5,
@@ -125,7 +144,7 @@ const animationTimeline = () => {
         opacity: 0,
         y: -150
       },
-      "+=0.7"
+      "+=2.0"
     )
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
@@ -135,7 +154,7 @@ const animationTimeline = () => {
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
       x: 10,
-      backgroundColor: "rgb(21, 161, 237)",
+      backgroundColor: "rgba(233, 184, 240, 1)",
       color: "#fff"
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
@@ -249,7 +268,7 @@ const animationTimeline = () => {
       {
         scale: 1,
         rotationY: 0,
-        color: "#ff69b4",
+        color: "#778cf4ff",
         ease: Expo.easeOut
       },
       0.1,
@@ -266,14 +285,13 @@ const animationTimeline = () => {
       "party"
     )
     .staggerTo(
-      ".eight svg",
-      1.5,
+      ".eight img",
+      5,
       {
         visibility: "visible",
         opacity: 0,
         scale: 80,
-        repeat: 3,
-        repeatDelay: 1.4
+        repeat: 1
       },
       0.3
     )
@@ -283,11 +301,12 @@ const animationTimeline = () => {
       zIndex: "-1"
     })
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
-    .to(
+    .from(
       ".last-smile",
       0.5,
       {
-        rotation: 90
+        opacity: 0,
+        y: 10
       },
       "+=1"
     );

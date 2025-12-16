@@ -2,10 +2,8 @@
   "greeting": "是你啊",
   "name": "旅行者",
   "greetingText": "祈月之夜真的很有趣",
-  "wishText": "May the js.prototypes always be with you! ;)",
-  "imagePath": "img/lydia2.png",
   "text1": "谢谢你们为我做的一切，我真的很开心",
-  "textInChatBox": "Happy birthday to you!! Yeee! Many many happy blah...",
+  "textInChatBox": "我们为你准备了一份礼物...",
   "sendButtonLabel": "Send",
   "text2": "我很庆幸，可以拥有这么多的朋友",
   "text3": "就在我将要离开的此刻，",
@@ -13,11 +11,10 @@
   "text4Adjective": "不舍",
   "text5Entry": "但命运",
   "text5Content": "似乎同我开了个玩笑",
-  "outroSmiley": ":(",
   "bigTextPart1": "可是",
   "bigTextPart2": "请你相信",
   "wishHeading": "月光联系着你我，不论日夜",
+  "wishText":"而我们，也终将在月光下重逢",
   "outroText": "如果有些想我了",
-  "replayText": "不妨再点一下这里，希望你喜欢这份小礼物",
-  "outroSmiley": ":)"
+  "replayText": "不妨再点一下这里，希望你喜欢这份小礼物"
 }

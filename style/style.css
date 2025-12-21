@@ -37,6 +37,67 @@ body {
   top: 20vh;
 }
 
+.zero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 确保在最上层 */
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.zero:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.zero1 {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+.zero1 span {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.zero1 span:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.zero2 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2em;
+  text-align: center;
+  max-width: 80%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .one {
   font-size: 4.5rem;
   color: rgb(230, 247, 248); 
@@ -135,11 +196,16 @@ body {
 
 .idea-5 span,
 .idea-6 span,
+.idea-7 span,
 .wish-hbd span {
   display: inline-block;
 }
 
 .idea-6 span {
+  font-size: 10rem;
+}
+
+.idea-7 span {
   font-size: 10rem;
 }
 
@@ -161,22 +227,6 @@ body {
   /* transform: scale(0.1); */
 }
 
-.baloons img {
-  display: inline-block;
-  position: absolute;
-}
-
-.baloons img:nth-child(even) {
-  left: -10%;
-}
-
-.baloons img:nth-child(odd) {
-  right: -10%;
-}
-
-.baloons img:nth-child(3n + 0) {
-  left: 30%;
-}
 
 .eight img {
   width: 25px;
@@ -255,8 +305,8 @@ body {
 }
 
 .nine .last-smile {
-  width: 160px;
-  margin-top: 30px;
+  width: 500px;
+  margin-top: 20px;
 }
 
 #replay {
@@ -285,6 +335,10 @@ body {
   }
 
   .idea-6 span {
+    font-size: 10rem;
+  }
+
+  .idea-7 span {
     font-size: 10rem;
   }
 

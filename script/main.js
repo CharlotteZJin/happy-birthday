@@ -54,6 +54,38 @@ const animationTimeline = () => {
 
   const tl = new TimelineMax();
 
+  const playVideo = (videoId = 'my-video1', containerSelector = '.video-container1') => {
+      return new Promise((resolve) => {
+        const videoContainer = document.querySelector(containerSelector);
+        const video = document.getElementById(videoId);
+        
+        if (!videoContainer || !video) {
+          console.error('未找到视频容器或视频元素');
+          setTimeout(resolve, 1000);
+          return;
+        }
+        
+        videoContainer.style.display = 'block';
+    
+        video.play().catch(error => {
+          console.log("视频播放失败:", error);
+          setTimeout(resolve, 1000);
+        });
+        
+        video.addEventListener('ended', () => {
+          videoContainer.style.display = 'none';
+          resolve();
+        }, { once: true }); // 使用 once: true 确保事件只触发一次
+        
+        // 可选：添加错误处理
+        video.addEventListener('error', () => {
+          console.error('视频加载错误');
+          videoContainer.style.display = 'none';
+          resolve();
+        });
+      });
+    };
+
   tl
     .to(".container", 0.1, {
       visibility: "visible"
@@ -146,6 +178,8 @@ const animationTimeline = () => {
       },
       "+=2.0"
     )
+    .from(".idea-0", 0.7, ideaTextTrans)
+    .to(".idea-0", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-2", 0.7, ideaTextTrans)
@@ -191,6 +225,14 @@ const animationTimeline = () => {
       },
       "+=2"
     )
+    .call(() => {
+      tl.pause();
+      
+      // 播放视频
+      playVideo('my-video1', '.video-container1').then(() => {
+        tl.resume();
+      });
+    })
     .staggerFrom(
       ".idea-6 span",
       0.8,
@@ -214,19 +256,46 @@ const animationTimeline = () => {
       0.2,
       "+=1"
     )
-    .staggerFromTo(
-      ".baloons img",
-      2.5,
+    .call(() => {
+      tl.pause();
+      
+      // 播放视频
+      playVideo('my-video2', '.video-container2').then(() => {
+        tl.resume();
+      });
+    })
+    .staggerFrom(
+      ".idea-7 span",
+      0.8,
       {
-        opacity: 0.9,
-        y: 1400
-      },
-      {
-        opacity: 1,
-        y: -1000
+        scale: 3,
+        opacity: 0,
+        rotation: 15,
+        ease: Expo.easeOut
       },
       0.2
     )
+    .staggerTo(
+      ".idea-7 span",
+      0.8,
+      {
+        scale: 3,
+        opacity: 0,
+        rotation: -15,
+        ease: Expo.easeOut
+      },
+      0.2,
+      "+=1"
+    )
+    .call(() => {
+      tl.pause();
+      
+      // 播放视频
+      playVideo('my-video3', '.video-container3').then(() => {
+        tl.resume();
+      });
+    })
+
     .from(
       ".lydia-dp",
       0.5,
@@ -237,7 +306,7 @@ const animationTimeline = () => {
         y: -25,
         rotationZ: -45
       },
-      "-=2"
+      "+=0"
     )
     .from(".hat", 0.5, {
       x: -100,
@@ -291,7 +360,7 @@ const animationTimeline = () => {
         visibility: "visible",
         opacity: 0,
         scale: 80,
-        repeat: 1
+        repeat: 0
       },
       0.3
     )
@@ -322,4 +391,33 @@ const animationTimeline = () => {
 };
 
 // Run fetch and animation in sequence
-fetchData();
+const startAnimation = () => {
+  const startContainer = document.getElementById('start-container');
+  startContainer.style.display = 'none';
+  
+  const audioElement = document.querySelector('audio');
+  if (audioElement) {
+    audioElement.play().catch(error => {
+      console.log("自动播放被阻止:", error);
+    });
+    
+    audioElement.volume = 0.7; 
+    
+    audioElement.loop = true;
+  } else {
+    console.log("未找到音频元素");
+  }
+  
+
+  fetchData();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const startContainer = document.getElementById('start-container');
+  
+  startContainer.addEventListener('click', startAnimation);
+
+  document.addEventListener('keydown', (e) => {
+    startAnimation();
+  });
+});

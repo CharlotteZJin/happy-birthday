@@ -179,7 +179,30 @@ const animationTimeline = () => {
       "+=2.0"
     )
     .from(".idea-0", 0.7, ideaTextTrans)
-    .to(".idea-0", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".thank-image", 0.7, {
+      scale: 0.2,
+      opacity: 0
+    }, "-=0.5")
+    .to(".thank-image", 0.5, {
+      rotation: 10,
+      transformOrigin: "center bottom"
+    })
+    .to(".thank-image", 0.5, {
+      rotation: -10,
+      transformOrigin: "center bottom",
+      repeat: 2,
+      yoyo: true,
+      ease: Sine.easeInOut
+    })
+    .to(".thank-image", 0.5, {
+      rotation: 0,
+      transformOrigin: "center bottom"
+    })
+    .to(".idea-0", 0.7, ideaTextTransLeave, "+=1")
+    .to(".thank-image", 0.7, {
+      scale: 0.2,
+      opacity: 0
+    }, "-=0.5")
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-2", 0.7, ideaTextTrans)
